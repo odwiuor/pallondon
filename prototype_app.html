@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Prototype Web Application</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+			}
+			form {
+				margin-top: 20px;
+			}
+			#content {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome to Prototype Web Application</h1>
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+
+		<div id="content">
+			<section id="home">
+				<h2>Home</h2>
+				<form id="greetForm">
+					<label for="name">Enter your name: </label>
+					<input type="text" id="name" name="name" required />
+					<button type="submit">Submit</button>
+				</form>
+				<div id="greeting"></div>
+			</section>
+
+			<section id="about">
+				<h2>About Us</h2>
+				<p>Web Page.</p>
+				<p>Paragraph.</p>
+				<p>Paragraph.</p>
+				<p>Paragraph.</p>
+			</section>
+
+			<section id="contact">
+				<h2>Contact Us</h2>
+				<p
+					>You can contact us via email at:
+					<a href="mailto:contact@example.com"
+						>contact@example.com</a
+					></p
+				>
+				<p
+					>Or you can reach out to us via phone at: +1 (123)
+					456-7890</p
+				>
+			</section>
+		</div>
+
+		<script>
+			document
+				.getElementById("greetForm")
+				.addEventListener("submit", function (event) {
+					event.preventDefault();
+
+					var name = document.getElementById("name").value;
+
+					document.getElementById("greeting").textContent =
+						"Hello, " + name + "!";
+				});
+		</script>
+	</body>
+</html>
